@@ -7,3 +7,13 @@ c:\users\daniel mejia\documents\visual studio 2015\Projects\ThreadPool_ProducerC
 c:\users\daniel mejia\documents\visual studio 2015\Projects\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.csproj.GenerateResource.Cache
 c:\users\daniel mejia\documents\visual studio 2015\Projects\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.exe
 c:\users\daniel mejia\documents\visual studio 2015\Projects\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.pdb
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\bin\Debug\ThreadPool_ProducerConsumer.exe.config
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.exe
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.pdb
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\bin\Debug\ThreadPool_ProducerConsumer.exe
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\bin\Debug\ThreadPool_ProducerConsumer.pdb
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\bin\Debug\MySql.Data.dll
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.csprojResolveAssemblyReference.cache
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.Form1.resources
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.Properties.Resources.resources
+C:\Users\David\GitHub\SistemasOperativos\final_so\ThreadPool_ProducerConsumer\ThreadPool_ProducerConsumer\obj\Debug\ThreadPool_ProducerConsumer.csproj.GenerateResource.Cache

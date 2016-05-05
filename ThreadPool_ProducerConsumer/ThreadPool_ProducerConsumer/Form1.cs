@@ -76,7 +76,8 @@ namespace ThreadPool_ProducerConsumer
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            pool.addRegister();
+            if(tbOrigen.Text.Length != 0 && tbDestino.Text.Length != 0 && tbCantidad.Text.Length != 0)
+                pool.addRegister();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
