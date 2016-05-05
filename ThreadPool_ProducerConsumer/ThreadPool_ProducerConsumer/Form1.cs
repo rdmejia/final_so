@@ -20,6 +20,7 @@ namespace ThreadPool_ProducerConsumer
             InitializeComponent();
         }
 
+        #region Validaciones
         public bool isNumber(string text)
         {
             foreach(char c in text)
@@ -38,6 +39,7 @@ namespace ThreadPool_ProducerConsumer
 
             return false;
         }
+        #endregion
 
         public void produce()
         {
@@ -70,16 +72,27 @@ namespace ThreadPool_ProducerConsumer
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            showPCWorker(dgvProducers, pool.producers);
-            showPCWorker(dgvConsumers, pool.consumers);
+            showPCWorker(dgvProducers, pool.producers, false);
+            showPCWorker(dgvConsumers, pool.consumers, true);
         }
 
-        private void showPCWorker(DataGridView dgv, List<PCWorker> list)
+        private void showPCWorker(DataGridView dgv, List<PCWorker> list, bool isConsumer)
         {
             dgv.Rows.Clear();
-            foreach(var v in list)
+            if(isConsumer)
             {
-                dgv.Rows.Add(v.getId(), v.getWorking());
+                foreach(Consumer v in list)
+                {
+                    dgv.Rows.Add(v.getId(), v.getWorking(), v.getStatus());
+                }
+            }
+            else
+            {
+                foreach(Producer v in list)
+                {
+                    dgv.Rows.Add(v.getId(), v.getWorking(), v.getStatus());
+                }
+
             }
         }
 

@@ -36,6 +36,11 @@ namespace ThreadPool_ProducerConsumer
             return working;
         }
 
+        public string getStatus()
+        {
+            return thread.ThreadState.ToString();
+        }
+
         public abstract void work();
 
         public void remove()
