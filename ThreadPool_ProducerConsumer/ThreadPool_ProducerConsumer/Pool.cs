@@ -46,13 +46,13 @@ namespace ThreadPool_ProducerConsumer
             return _instance;
         }
 
-        public void addRegister()
+        public void addRegister(string OrigenParam, string DestinoParam, int CantidadParam)
         {
             Producer producer = new Producer(producers.Count + consumers.Count);
             producers.Add(producer);
         }
 
-        public void removeRegister()
+        public void removeRegister(string OrigenParam, string DestinoParam, int CantidadParam)
         {
             PCWorker producer = producers.LastOrDefault();
             if (producer != null)

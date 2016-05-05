@@ -20,6 +20,25 @@ namespace ThreadPool_ProducerConsumer
             InitializeComponent();
         }
 
+        public bool isNumber(string text)
+        {
+            foreach(char c in text)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+
+            return true;
+        }
+
+        public bool ValidarTextbox(string pOrigen, string pDestino, string pCantidad)
+        {
+            if (pOrigen.Length > 0 && pDestino.Length > 0 && pCantidad.Length > 0)
+                return isNumber(pCantidad);
+
+            return false;
+        }
+
         public void produce()
         {
             //while(true)
@@ -76,13 +95,24 @@ namespace ThreadPool_ProducerConsumer
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(tbOrigen.Text.Length != 0 && tbDestino.Text.Length != 0 && tbCantidad.Text.Length != 0)
-                pool.addRegister();
+            string Origen = tbOrigen.Text, Destino = tbDestino.Text, sCantidad = tbCantidad.Text;
+
+            if (ValidarTextbox(Origen, Destino, sCantidad))
+            {
+                int Cantidad = int.Parse(sCantidad);
+                pool.addRegister(Origen, Destino, Cantidad);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            pool.removeRegister();
+            string Origen = tbOrigen.Text, Destino = tbDestino.Text, sCantidad = tbCantidad.Text;
+
+            if (ValidarTextbox(Origen, Destino, sCantidad))
+            {
+                int Cantidad = int.Parse(sCantidad);
+                pool.removeRegister(Origen, Destino, Cantidad);
+            }
         }
     }
 }

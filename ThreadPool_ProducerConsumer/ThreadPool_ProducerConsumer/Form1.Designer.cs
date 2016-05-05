@@ -38,8 +38,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgvProducers = new System.Windows.Forms.DataGridView();
             this.dgvConsumers = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +50,9 @@
             this.working = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusConsum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumers)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +136,7 @@
             this.dgvConsumers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsumers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.StatusConsum,
             this.dataGridViewCheckBoxColumn1});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -150,23 +152,9 @@
             this.dgvConsumers.Name = "dgvConsumers";
             this.dgvConsumers.ReadOnly = true;
             this.dgvConsumers.RowHeadersVisible = false;
-            this.dgvConsumers.Size = new System.Drawing.Size(187, 288);
+            this.dgvConsumers.Size = new System.Drawing.Size(234, 288);
             this.dgvConsumers.TabIndex = 3;
             this.dgvConsumers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsumers_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Trabajando";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 75;
             // 
             // label1
             // 
@@ -262,6 +250,26 @@
             this.registros.Name = "registros";
             this.registros.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // StatusConsum
+            // 
+            this.StatusConsum.HeaderText = "Status";
+            this.StatusConsum.Name = "StatusConsum";
+            this.StatusConsum.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Trabajando";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 75;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,8 +306,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dgvProducers;
         private System.Windows.Forms.DataGridView dgvConsumers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -312,6 +318,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn working;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn registros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusConsum;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }
 
