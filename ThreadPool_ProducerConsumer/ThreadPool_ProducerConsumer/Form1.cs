@@ -41,58 +41,27 @@ namespace ThreadPool_ProducerConsumer
         }
         #endregion
 
-        public void produce()
-        {
-            //while(true)
-            //{
-            //    int x = ran.Next(100);
-            //    semaphore.WaitOne();
-            //    stack.Push(x);
-            //    Thread.Sleep(100);
-            //    semaphore.Release();
-            //}
-        }
-
-        public void consume()
-        {
-            //while(true)
-            //{
-            //    semaphore.WaitOne();
-            //    int x = stack.Pop();
-            //    Thread.Sleep(100);
-            //    semaphore.Release();
-            //}
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             pool = Pool.getInstance();
             timer1.Start();
+            //pool.addRegister("hola", "adios", 2);
+            //pool.removeRegister("ssss", "ddd", 2);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            showPCWorker(dgvProducers, pool.producers, false);
-            showPCWorker(dgvConsumers, pool.consumers, true);
+            showPCWorker(dgvProducers, pool.producers);
+            showPCWorker(dgvConsumers, pool.consumers);
         }
 
-        private void showPCWorker(DataGridView dgv, List<PCWorker> list, bool isConsumer)
+        private void showPCWorker(DataGridView dgv, List<PCWorker> list)
         {
             dgv.Rows.Clear();
-            if(isConsumer)
+            for(int i = 0; i < list.Count; i++)
             {
-                foreach(Consumer v in list)
-                {
-                    dgv.Rows.Add(v.getId(), v.getWorking(), v.getStatus());
-                }
-            }
-            else
-            {
-                foreach(Producer v in list)
-                {
-                    dgv.Rows.Add(v.getId(), v.getWorking(), v.getStatus());
-                }
-
+                var v = list[i];
+                dgv.Rows.Add(v.getId(), v.getWorking(), v.getStatus(), v.used + " de " + v.total);
             }
         }
 
@@ -103,6 +72,8 @@ namespace ThreadPool_ProducerConsumer
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Pool.getInstance().conn.ClearPoolAsync(Pool.getInstance().conn);
+            Pool.getInstance().conn.Close();
             Environment.Exit(0);
         }
 

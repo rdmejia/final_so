@@ -9,32 +9,36 @@ namespace ThreadPool_ProducerConsumer
 {
     class Consumer : PCWorker
     {
-        static Semaphore consuming = new Semaphore(1, 1);
+        public static Semaphore consuming;
 
-        public Consumer(int id) : base(id)
+        public Consumer(int id) : base(id, 0, null)
         {
+            //thread = new Thread(this.work);
+            //thread.Join(0);
+            //while (this.thread.IsAlive) ;
+            //Pool.getInstance().consumers.Remove(this);
         }
 
         public override void work()
         {
-            while (true)
+            working = false;
+            //while (Producer.size < Pool.maxSize) ;
+            Pool.semaphore.WaitOne();
+            consuming.WaitOne();
+            working = true;
+            cmd = Pool.commands.FirstOrDefault();
+            Pool.commands.Remove(cmd);
+            //Pool.getInstance().consumers.Remove(this);
+            Thread.Sleep(1500);
+            working = false;
+            consuming.Release();
+            Pool.semaphore.Release();
+            used++;
+            if (cmd != null)
             {
-                working = false;
-                while (Pool.commands.Count < Pool.maxSize && Pool.getInstance().producers.Count != 0) ;
-                Command cmd = null;
-                while (Pool.commands.Count != 0)
-                {
-                    Pool.semaphore.WaitOne();
-                    consuming.WaitOne();
-                    working = true;
-                    cmd = Pool.commands.FirstOrDefault();
-                    Pool.commands.Remove(cmd);
-                    Thread.Sleep(100);
-                    consuming.Release();
-                    Pool.semaphore.Release();
-                    if (cmd != null)
-                        cmd.delete();
-                }
+                Producer.size--;
+                if (cmd != null) cmd.execute();
+                Pool.getInstance().consumers.Clear();
             }
         }
     }

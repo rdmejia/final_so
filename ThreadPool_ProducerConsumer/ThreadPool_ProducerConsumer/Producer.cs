@@ -9,20 +9,20 @@ namespace ThreadPool_ProducerConsumer
 {
     class Producer : PCWorker
     {
-        static Semaphore producing = new Semaphore(1, 1);
+        public static Semaphore producing;
+        public static int size = 0;
 
-        public Producer(int id) : base(id)
+        public Producer(int id, int total, Command cmd) : base(id, total, cmd)
         {
         }
 
         public override void work()
         {
-            while(true)
+            while (used < total)
             {
                 working = false;
-                while (Pool.commands.Count != 0) ;
-                Command cmd = new Command("Producer " + id, "Some Consumer");
-                while(Pool.commands.Count < Pool.maxSize)
+                while (Pool.commands.Count != 0 && Pool.getInstance().consumers.Count != 0)  ;
+                while (used < total && size < Pool.maxSize)
                 {
                     Pool.semaphore.WaitOne();
                     producing.WaitOne();
@@ -31,9 +31,18 @@ namespace ThreadPool_ProducerConsumer
                     Thread.Sleep(100);
                     producing.Release();
                     Pool.semaphore.Release();
-                    cmd.insert();
+                    //cmd.execute();
+                    used++;
+                    size++;
+                }
+                int aux = Pool.commands.Count;
+                for (int i = 0; i < aux; i++)
+                {
+                    PCWorker consumer = new Consumer(Pool.getInstance().consumers.Count + Pool.getInstance().producers.Count);
+                    Pool.getInstance().consumers.Add(consumer);
                 }
             }
+            Pool.getInstance().producers.Remove(this);
         }
     }
 }

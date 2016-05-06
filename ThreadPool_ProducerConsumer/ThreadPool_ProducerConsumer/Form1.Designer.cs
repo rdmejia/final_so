@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgvProducers = new System.Windows.Forms.DataGridView();
-            this.dgvConsumers = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,9 +49,11 @@
             this.working = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registros = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.StatusConsum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvConsumers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsumers)).BeginInit();
             this.SuspendLayout();
@@ -90,9 +91,9 @@
             this.dgvProducers.AllowUserToDeleteRows = false;
             this.dgvProducers.AllowUserToResizeColumns = false;
             this.dgvProducers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvProducers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvProducers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProducers.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProducers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProducers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -103,58 +104,22 @@
             this.working,
             this.Status,
             this.registros});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducers.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProducers.Location = new System.Drawing.Point(16, 138);
             this.dgvProducers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProducers.MultiSelect = false;
             this.dgvProducers.Name = "dgvProducers";
             this.dgvProducers.ReadOnly = true;
             this.dgvProducers.RowHeadersVisible = false;
-            this.dgvProducers.Size = new System.Drawing.Size(326, 288);
+            this.dgvProducers.Size = new System.Drawing.Size(469, 288);
             this.dgvProducers.TabIndex = 2;
-            // 
-            // dgvConsumers
-            // 
-            this.dgvConsumers.AllowUserToAddRows = false;
-            this.dgvConsumers.AllowUserToDeleteRows = false;
-            this.dgvConsumers.AllowUserToResizeColumns = false;
-            this.dgvConsumers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvConsumers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvConsumers.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvConsumers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvConsumers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvConsumers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvConsumers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsumers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewCheckBoxColumn1,
-            this.StatusConsum});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConsumers.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvConsumers.Location = new System.Drawing.Point(410, 138);
-            this.dgvConsumers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvConsumers.MultiSelect = false;
-            this.dgvConsumers.Name = "dgvConsumers";
-            this.dgvConsumers.ReadOnly = true;
-            this.dgvConsumers.RowHeadersVisible = false;
-            this.dgvConsumers.Size = new System.Drawing.Size(234, 288);
-            this.dgvConsumers.TabIndex = 3;
-            this.dgvConsumers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsumers_CellContentClick);
             // 
             // label1
             // 
@@ -169,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(407, 117);
+            this.label2.Location = new System.Drawing.Point(756, 118);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 17);
@@ -250,31 +215,74 @@
             this.registros.Name = "registros";
             this.registros.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // dgvConsumers
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
+            this.dgvConsumers.AllowUserToAddRows = false;
+            this.dgvConsumers.AllowUserToDeleteRows = false;
+            this.dgvConsumers.AllowUserToResizeColumns = false;
+            this.dgvConsumers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvConsumers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvConsumers.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvConsumers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvConsumers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvConsumers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvConsumers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsumers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewCheckBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsumers.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvConsumers.Location = new System.Drawing.Point(508, 138);
+            this.dgvConsumers.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvConsumers.MultiSelect = false;
+            this.dgvConsumers.Name = "dgvConsumers";
+            this.dgvConsumers.ReadOnly = true;
+            this.dgvConsumers.RowHeadersVisible = false;
+            this.dgvConsumers.Size = new System.Drawing.Size(469, 288);
+            this.dgvConsumers.TabIndex = 12;
             // 
-            // dataGridViewCheckBoxColumn1
+            // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Trabajando";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 75;
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
             // 
-            // StatusConsum
+            // dataGridViewCheckBoxColumn2
             // 
-            this.StatusConsum.HeaderText = "Status";
-            this.StatusConsum.Name = "StatusConsum";
-            this.StatusConsum.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Trabajando";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn2.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Registros Creados";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 526);
+            this.Controls.Add(this.dgvConsumers);
             this.Controls.Add(this.tbCantidad);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbDestino);
@@ -283,7 +291,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvConsumers);
             this.Controls.Add(this.dgvProducers);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -305,7 +312,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dgvProducers;
-        private System.Windows.Forms.DataGridView dgvConsumers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -318,9 +324,11 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn working;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn registros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StatusConsum;
+        private System.Windows.Forms.DataGridView dgvConsumers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
 

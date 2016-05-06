@@ -17,10 +17,15 @@ namespace ThreadPool_ProducerConsumer
         protected int id;
         protected bool working;
         protected Thread thread;
+        protected Command cmd;
+        public int total, used;
 
-        public PCWorker(int id)
+        public PCWorker(int id, int total, Command cmd)
         {
             this.id = id;
+            this.cmd = cmd;
+            this.total = total;
+            this.used = 0;
             this.thread = new Thread(this.work);
             this.thread.Name = "Thread " + this.id;
             this.thread.Start();

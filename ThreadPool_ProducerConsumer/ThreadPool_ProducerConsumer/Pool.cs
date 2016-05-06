@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace ThreadPool_ProducerConsumer
 {
     class Pool
     {
+        public MySqlConnection conn;
+        string myConnectionString = "server=localhost;uid=root;" + "pwd=sysdba;database=sistemas_op;";
+
         public List<PCWorker> producers;
         public List<PCWorker> consumers;
 
@@ -21,22 +26,36 @@ namespace ThreadPool_ProducerConsumer
         private Pool(int producerParam, int consumerParam, int commandsSize)
         {
             commands = new List<Command>();
-            semaphore = new Semaphore(1, 1);
+            semaphore = new Semaphore(producerParam + consumerParam, producerParam + consumerParam);
 
             this.producers = new List<PCWorker>();
             this.consumers = new List<PCWorker>();
 
-            for(int i = 0; i < producerParam; i++)
-            {
-                this.producers.Add(new Producer(i));
-            }
+            Producer.producing = new Semaphore(producerParam, producerParam);
+            Consumer.consuming = new Semaphore(consumerParam, consumerParam);
 
-            for(int i = 0; i < consumerParam; i++)
-            {
-                this.consumers.Add(new Consumer(i + producers.Count));
-            }
+            //for(int i = 0; i < producerParam; i++)
+            //{
+            //    this.producers.Add(new Producer(i));
+            //}
+
+            //for(int i = 0; i < consumerParam; i++)
+            //{
+            //    this.consumers.Add(new Consumer(i + producers.Count));
+            //}
 
             maxSize = commandsSize;
+
+            try
+            {
+                conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+            }
+            catch (MySqlException ex)
+            {
+                bool f = false;
+            }
         }
 
         public static Pool getInstance()
@@ -48,18 +67,16 @@ namespace ThreadPool_ProducerConsumer
 
         public void addRegister(string OrigenParam, string DestinoParam, int CantidadParam)
         {
-            Producer producer = new Producer(producers.Count + consumers.Count);
+            //SQL INSERT
+            PCWorker producer = new Producer(producers.Count + consumers.Count, CantidadParam, new InsertionCommand(OrigenParam, DestinoParam));
             producers.Add(producer);
         }
 
         public void removeRegister(string OrigenParam, string DestinoParam, int CantidadParam)
         {
-            PCWorker producer = producers.LastOrDefault();
-            if (producer != null)
-            {
-                producer.remove();
-                producers.Remove(producer);
-            }
+            //SQL DELETE
+            PCWorker consumer = new Producer(producers.Count + consumers.Count, CantidadParam, new DeleteCommand(OrigenParam, DestinoParam));
+            producers.Add(consumer);
         }
     }
 }
